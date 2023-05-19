@@ -1,6 +1,6 @@
 {
-  "name": "sma_modbus",
-  "version": "2.2.2",
+  "name": "sma_inverter",
+  "version": "1.0.0",
   "description": "Library for accessing SMA devices by modbus",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/orlopau/sma_modbus.git"
+    "url": "git+https://github.com/Icke-de/sma_inverter.git"
   },
   "keywords": [
     "sma",
@@ -20,9 +20,9 @@
   "author": "orlopau",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/orlopau/sma_modbus/issues"
+    "url": "https://github.com/Icke-de/sma_inverter/issues"
   },
-  "homepage": "https://github.com/orlopau/sma_modbus",
+  "homepage": "https://github.com/Icke-de/sma_inverter",
   "dependencies": {
     "int64-buffer": "^0.99.1007",
     "loglevel": "^1.6.1",
