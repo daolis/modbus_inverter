@@ -1,11 +1,14 @@
 # SMA Modbus
 This module is based on the SMA_Modbus module. [Module](https://github.com/orlopau/sma_modbus.git)
 
-# Changes
+## Changes
 - changed function "readModbus" to "readModbusHR" for Holding Registers
 - add function "readModbusIR" for Inputregisters
 - ClientID / SlaveID switched to SMA Object, you can declare at create Object
 - add SMA Sunny Tripower 8.0 Profil
+
+## Next Steps
+- integrate in ioBroker Adapter
     
 ## Introduction
 
