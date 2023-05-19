@@ -1,6 +1,12 @@
 # SMA Modbus
-[![NPM](https://nodei.co/npm/sma_modbus.png)](https://nodei.co/npm/sma_modbus/)
+This module is based on the SMA_Modbus module. [Module](https://github.com/orlopau/sma_modbus.git)
 
+# Changes
+- changed function "readModbus" to "readModbusHR" for Holding Registers
+- add function "readModbusIR" for Inputregisters
+- ClientID / SlaveID switched to SMA Object, you can declare at create Object
+- add SMA Sunny Tripower 8.0 Profil
+    
 ## Introduction
 
 The module provides easy access to the data provided by SMA devices with ModBus support.
