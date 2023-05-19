@@ -1,0 +1,44 @@
+{
+  "name": "sma_modbus",
+  "version": "2.2.2",
+  "description": "Library for accessing SMA devices by modbus",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "test": "mocha -r ts-node/register ./test/**/*.ts",
+    "prepublish": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orlopau/sma_modbus.git"
+  },
+  "keywords": [
+    "sma",
+    "modbus",
+    "pv"
+  ],
+  "author": "orlopau",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/orlopau/sma_modbus/issues"
+  },
+  "homepage": "https://github.com/orlopau/sma_modbus",
+  "dependencies": {
+    "int64-buffer": "^0.99.1007",
+    "loglevel": "^1.6.1",
+    "modbus-serial": "^8.0.11"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/loglevel": "^1.5.3",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.12.12",
+    "chai": "^4.2.0",
+    "mocha": "^10.2.0",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.2"
+  },
+  "files": [
+    "dist"
+  ]
+}
