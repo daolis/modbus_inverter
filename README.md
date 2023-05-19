@@ -1,4 +1,4 @@
-# SMA Modbus
+# SMA Inverter
 This module is based on the SMA_Modbus module. [Module](https://github.com/orlopau/sma_modbus.git)
 
 ## Changes
