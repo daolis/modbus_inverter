@@ -2,6 +2,9 @@
 This module is based on the SMA_Modbus module. [Module](https://github.com/orlopau/sma_modbus.git)
 
 ## Changes
+V1.0.1
+- add method getHealthStatus for SMA Sunny Tripower 8.0 (testet)
+V1.0.0
 - changed function "readModbus" to "readModbusHR" for Holding Registers
 - add function "readModbusIR" for Inputregisters
 - ClientID / SlaveID switched to SMA Object, you can declare at create Object
