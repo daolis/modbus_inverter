@@ -28,6 +28,6 @@ setInterval(async () => {
     await device.getDaylyPower("kWh").then(console.log),
     await device.getCurrentPower().then(console.log);
     await device.getCurrentPower("kW").then(console.log);
-    
+    await device.getHealthStatus().then(console.log);
 
 }, 2000);

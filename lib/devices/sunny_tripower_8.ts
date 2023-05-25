@@ -122,4 +122,21 @@ export class SunnyTripower8 extends BasicSMADevice {
             }
         }
     }
+
+    async getHealthStatus():Promise<string>{
+        let healthStatus: number = await super.readModbusIR(30201, ModbusDatatype.uint32);
+
+        switch (healthStatus) {
+            case 307: 
+                return "OK (ok)";
+            case 303:
+                return "Aus (off)";
+            case 455:
+                return "Warnung (Wrn)";
+            case 35:
+                return "Fehler (Error)";
+            default:
+                return "Undefinirter Wert (" + healthStatus + "). Bitte im Git Reposotry als Issue aufnehmen."
+        }
+    }
 }
