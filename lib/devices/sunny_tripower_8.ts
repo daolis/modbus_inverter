@@ -24,28 +24,20 @@ export class SunnyTripower8 extends BasicSMADevice {
         switch (deviceClass) {
             case 8001:
                 return "Solar-Wechselrichter";
-                break;
             case 8002:
                 return "Wind-Wechselrichter";
-                break;
             case 8007:
                 return "Batterie-Wechselrichter";
-                break;
             case 8033:
                 return "Verbraucher";
-                break;
             case 8064:
                 return "Sensorik allgemein";
-                break;
             case 8065:
                 return "Stromzähler";
-                break;
             case 8128:
                 return "Kommunikationsprodukte";
-                break;   
             default:
                 return "Alle Geräte";
-                break;
         }
     }
 
@@ -57,18 +49,15 @@ export class SunnyTripower8 extends BasicSMADevice {
     async getTotalPower(unit?: string): Promise<string>{
         let register: number = 30513;
         switch (unit) {
-            case "Wh":
+            case "W":
                 return await super.readModbusIR(register, ModbusDatatype.uint64, 4);
-                break;
             
-            case "kWh":
+            case "kW":
                 let value: number = await super.readModbusIR(register, ModbusDatatype.uint64, 4)*0.001;
                 return await value.toFixed(3);
-                break;
             
             default:                
                 return await super.readModbusIR(register, ModbusDatatype.uint64, 4);
-                break;
         }
     }
 
@@ -80,18 +69,15 @@ export class SunnyTripower8 extends BasicSMADevice {
     async getDaylyPower(unit?: string): Promise<string>{
         let register: number = 30517;
         switch (unit) {
-            case "Wh":
+            case "W":
                 return await super.readModbusIR(register, ModbusDatatype.uint64, 4);
-                break;
             
-            case "kWh":
+            case "kW":
                 let value: number = await super.readModbusIR(register, ModbusDatatype.uint64, 4)*0.001;
                 return await value.toFixed(3);
-                break;
             
             default:                
                 return await super.readModbusIR(register, ModbusDatatype.uint64, 4);
-                break;
         }
     }
 
@@ -109,22 +95,24 @@ export class SunnyTripower8 extends BasicSMADevice {
             switch (unit) {
                 case "W":
                     return await super.readModbusIR(register, ModbusDatatype.int32, 2);
-                    break;
     
                 case "kW":
                     value = await super.readModbusIR(register, ModbusDatatype.int32, 2)*0.001;
                     return await value.toFixed(3);
-                    break;
             
                 default:
                     return await super.readModbusIR(register, ModbusDatatype.int32, 2);
-                    break;
             }
         }
     }
 
+    /**
+     * Helth Status
+     * 
+     * @returns Readeble Status
+     */
     async getHealthStatus():Promise<string>{
-        let healthStatus: number = await super.readModbusIR(30201, ModbusDatatype.uint32);
+        let healthStatus: number = await super.readModbusIR(30201, ModbusDatatype.uint32, 2);
 
         switch (healthStatus) {
             case 307: 
@@ -138,5 +126,12 @@ export class SunnyTripower8 extends BasicSMADevice {
             default:
                 return "Undefinirter Wert (" + healthStatus + "). Bitte im Git Reposotry als Issue aufnehmen."
         }
+    }
+
+    async test():Promise<any>{
+        let l1:number = await super.readModbusIR(31503, ModbusDatatype.int32, 2);
+        let l2: any = await super.readModbusIR(31505, ModbusDatatype.int32, 2);
+        let l3: any = await super.readModbusIR(31507, ModbusDatatype.int32, 2);
+        return await [{"L1": l1, "L2": l2, "L3": l3}];
     }
 }
