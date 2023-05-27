@@ -24,11 +24,11 @@ setInterval(async () => {
         deviceClass = await device.getDeviceClass();
         console.log(deviceClass);        
     }
-    await device.getTotalPower("kWh").then(console.log);
-    await device.getDaylyPower("kWh").then(console.log),
+    await device.getTotalPower("kW").then(console.log);
+    await device.getDaylyPower("kW").then(console.log),
     await device.getCurrentPower("kW").then(console.log);
     await device.getCurrentPower("kW").then(console.log);
     await device.getHealthStatus().then(console.log);
-    await device.test().then(console.log);
+    //await device.test().then(console.log);
 
 }, 2000);

@@ -1,6 +1,6 @@
 {
-  "name": "sma_inverter",
-  "version": "1.0.1",
+  "name": "modbus_inverter",
+  "version": "1.0.2",
   "description": "Library for accessing devices by modbus",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

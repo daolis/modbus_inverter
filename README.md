@@ -1,7 +1,9 @@
-# SMA Inverter
+# Modbus Inverter
 This module is based on the SMA_Modbus module. [Module](https://github.com/orlopau/sma_modbus.git)
 
 ## Changes
+V1.0.2
+- change Package name to Modbus Inverter
 V1.0.1
 - add method getHealthStatus for SMA Sunny Tripower 8.0 (testet)
 V1.0.0
