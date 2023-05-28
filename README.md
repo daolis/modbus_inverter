@@ -2,6 +2,13 @@
 This module is based on the SMA_Modbus module. [Module](https://github.com/orlopau/sma_modbus.git)
 
 ## Changes
+V1.0.3
+- add method 
+    - getInverterStatus
+    - getRecommendedAction
+    - getOperatingCondition
+    - getCurrentPower_L1_L2_L3
+
 V1.0.2
 - change Package name to Modbus Inverter
 V1.0.1
