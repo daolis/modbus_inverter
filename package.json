@@ -1,6 +1,6 @@
 {
   "name": "modbus_inverter",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Library for accessing devices by modbus",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -10,19 +10,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Icke-de/sma_inverter.git"
+    "url": "git+https://github.com/Icke-de/modbus_inverter.git"
   },
   "keywords": [
     "sma",
     "modbus",
     "pv"
   ],
-  "author": "orlopau",
+  "author": "Icke-de",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Icke-de/sma_inverter/issues"
+    "url": "https://github.com/Icke-de/modbus_inverter/issues"
   },
-  "homepage": "https://github.com/Icke-de/sma_inverter",
+  "homepage": "https://github.com/Icke-de/modbus_inverter",
   "dependencies": {
     "int64-buffer": "^0.99.1007",
     "loglevel": "^1.6.1",
