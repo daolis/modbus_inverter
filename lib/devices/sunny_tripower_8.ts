@@ -156,7 +156,7 @@ export class SunnyTripower8 extends BasicSMADevice {
      * @returns recommended action
      */
     async getRecommendedAction():Promise<string>{
-        let recommendedAction: number = await super.readModbusIR(32385, ModbusDatatype.uint32, 2);
+        let recommendedAction: number = await super.readModbusIR(30211, ModbusDatatype.uint32, 2);
 
         switch (recommendedAction) {
             case 336: 
