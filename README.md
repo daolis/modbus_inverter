@@ -2,6 +2,9 @@
 This module is based on the SMA_Modbus module. [Module](https://github.com/orlopau/sma_modbus.git)
 
 ## Changes
+V1.0.6
+- test to implement new Device (Huawei SDongleA)
+
 V1.0.3
 - add method 
     - getInverterStatus
