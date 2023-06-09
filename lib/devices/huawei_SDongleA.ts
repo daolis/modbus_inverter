@@ -20,7 +20,7 @@ export class HuaweiSDongleA extends BasicSMADevice {
      * @returns Modell
      */
     async getModell(): Promise<string> {
-        return await super.readModbusHR(30000, ModbusDatatype.string, 15);
+        return await super.readModbusHR(30000-1, ModbusDatatype.string, 15);
     }
 
     /**

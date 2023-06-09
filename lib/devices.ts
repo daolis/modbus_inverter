@@ -29,7 +29,7 @@ export abstract class BasicSMADevice implements Devices{
     }
 
     async readModbusIR(register: number, datatype: ModbusDatatype, length?: number): Promise<any> {
-        return this.connection.readModbusHR(register, datatype, length);
+        return this.connection.readModbusIR(register, datatype, length);
     }
 
     close(){
