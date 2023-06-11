@@ -1,5 +1,6 @@
 import {Uint64BE} from "int64-buffer";
 
+
 export enum ModbusDatatype {
     acc32,
     acc64,
@@ -9,6 +10,7 @@ export enum ModbusDatatype {
     int16,
     int32,
     string,
+    json,
     sunssf,
     uint16,
     uint32,
@@ -25,6 +27,7 @@ export namespace ModbusDatatype {
             case ModbusDatatype.int16: return 1;
             case ModbusDatatype.int32: return 2;
             case ModbusDatatype.string: return undefined;
+            case ModbusDatatype.json: return undefined;
             case ModbusDatatype.sunssf: return undefined;
             case ModbusDatatype.uint16: return 1;
             case ModbusDatatype.uint32: return 2;
@@ -47,6 +50,8 @@ export namespace ModbusDatatype {
                     return buffer.readInt32BE(0);
                 }
             case ModbusDatatype.string: return buffer.toString("utf-8").replace(/\0/g, '');
+            case ModbusDatatype.json: console.log(buffer.toJSON());
+            
             case ModbusDatatype.uint16:
                 if(buffer.equals(Buffer.from("FFFF", "hex"))){
                     return undefined;
