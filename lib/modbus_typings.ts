@@ -10,11 +10,11 @@ export enum ModbusDatatype {
     int16,
     int32,
     string,
-    json,
     sunssf,
     uint16,
     uint32,
-    uint64
+    uint64,
+    buffer
 }
 export namespace ModbusDatatype {
     export function words(dtype: ModbusDatatype): number | undefined{
@@ -27,11 +27,12 @@ export namespace ModbusDatatype {
             case ModbusDatatype.int16: return 1;
             case ModbusDatatype.int32: return 2;
             case ModbusDatatype.string: return undefined;
-            case ModbusDatatype.json: return undefined;
             case ModbusDatatype.sunssf: return undefined;
             case ModbusDatatype.uint16: return 1;
             case ModbusDatatype.uint32: return 2;
             case ModbusDatatype.uint64: return 4;
+            case ModbusDatatype.buffer: return undefined;
+            
         }
     }
 
@@ -50,12 +51,13 @@ export namespace ModbusDatatype {
                     return buffer.readInt32BE(0);
                 }
             case ModbusDatatype.string: return buffer.toString("utf-8").replace(/\0/g, '');
-            case ModbusDatatype.json: console.log(buffer.toJSON());
+            case ModbusDatatype.buffer: console.log(buffer); break
             
             case ModbusDatatype.uint16:
                 if(buffer.equals(Buffer.from("FFFF", "hex"))){
                     return undefined;
                 }else{
+                    console.log(buffer);
                     return buffer.readUInt16BE(0)
                 }
             case ModbusDatatype.uint32 || ModbusDatatype.acc32:

@@ -15,7 +15,7 @@ async function readMB(){
     //let modellId = await device.getModellID();
     //let serialNr = await device.getSerialNumber();
     //let unknown = await device.getUnknown();
-    await console.log("Modell: " + modell);
+    await console.log("Model: " + modell);
     //await console.log("ModellID: " + modellId);
     //await console.log("Seriennummer: " + serialNr);
     //await console.log("unknown: " + unknown);
