@@ -14,7 +14,7 @@ export abstract class BasicSMADevice implements Devices{
     private ipAddress: string;
     private unitId: number;
 
-    constructor(ipAddress: string, modbusPort = 502, unitId: number ) {
+    constructor(ipAddress: string, modbusPort: number = 502, unitId: number = 1 ) {
         this.unitId = unitId;
         this.connection = new ModbusConnection(ipAddress, modbusPort, unitId);
         this.ipAddress = ipAddress;

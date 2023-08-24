@@ -27,7 +27,7 @@ export class ModbusConnection {
 
     isOpen(): boolean {
         // @ts-ignore
-        return <boolean>this.client.isOpen;
+        return this.client.isOpen;
     }
 
     close() {
@@ -56,7 +56,7 @@ export class ModbusConnection {
         try {
             log.info("Length: " + words);
             let answer = await this.client.readHoldingRegisters(register, words);
-            log.debug(answer);
+            log.debug(`Answer: ${answer}`);
             return ModbusDatatype.fromBuffer(dtype, answer.buffer);
         } catch (e) {
             log.warn("Error while communicating with " + this.ipAddress + ": " + e);
@@ -97,6 +97,7 @@ export class ModbusConnection {
             this.client = new ModbusRTU();
             this.client.setID(this.clientId);
             await this.client.connectTcpRTUBuffered(this.ipAddress, {port: this.port});
+            await this.asyncTimeout(delay);
             log.info("Connected to " + this.ipAddress);
         } catch (e) {
             log.warn("Couldnt connect to " + this.ipAddress + ":" + this.port);
